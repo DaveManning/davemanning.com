@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Free infographic from Dave Manning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">    
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "61e249b9-cc74-44b5-a125-ec66f7e6311c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+        
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-23568654-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>   
+        <script src="scripts/Ai2CanvasAnimation.js"></script>
+        <script>
+
+    // Main canvas and context references
+    var canvas;
+    var ctx;
+
+    // Frames per second
+    var fps = 60.0;
+
+    function init() {
+
+      // Set main canvas and context references
+      canvas = document.getElementById("canvas");
+      ctx = canvas.getContext("2d");
+
+      // Initialize animations
+      bigData.alphaClock = new clock(2.00, 0.00, 1, false, 1, linear, 1.0, 1.00, 0.0000);
+      impact.scaleClock = new clock(2.00, 0.00, 1, false, 1, quadEaseOut, 1.0, 1.00, 0.0001);
+
+      // Start animation clocks
+      bigData.alphaClock.start();
+      impact.scaleClock.start();
+
+      // Set animation timer
+      setInterval(drawFrame, (1000 / fps));
+    }
+
+    function updateAnimations() {
+
+      // Update animation clocks
+      updateAllClocks();
+    }
+
+    function drawFrame() {
+
+      // Update animations
+      updateAnimations();
+
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      draw(ctx);
+
+      ctx.save();
+      ctx.globalAlpha = bigData.alphaClock.value;
+      bigData(ctx);
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(401.0, 33.9);
+      ctx.scale(impact.scaleClock.value, impact.scaleClock.value);
+      impact(ctx);
+      ctx.restore();
+    }
+
+    function draw(ctx) {
+
+      // layer1/Path
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(800.5, 200.5);
+      ctx.lineTo(0.5, 200.5);
+      ctx.lineTo(0.5, 0.5);
+      ctx.lineTo(800.5, 0.5);
+      ctx.lineTo(800.5, 200.5);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(0, 101, 152)";
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function bigData(ctx) {
+
+      // bigData/Group
+      ctx.save();
+
+      // bigData/Group/Compound Path
+      ctx.save();
+      ctx.beginPath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(78.2, 138.9);
+      ctx.bezierCurveTo(80.1, 140.0, 81.8, 141.3, 83.4, 142.8);
+      ctx.bezierCurveTo(85.1, 144.3, 86.5, 146.0, 87.7, 147.8);
+      ctx.bezierCurveTo(88.9, 149.7, 89.9, 151.6, 90.6, 153.8);
+      ctx.bezierCurveTo(91.3, 155.9, 91.7, 158.1, 91.7, 160.5);
+      ctx.bezierCurveTo(91.7, 164.7, 90.9, 168.8, 89.4, 172.6);
+      ctx.bezierCurveTo(87.8, 176.4, 85.7, 179.7, 82.9, 182.5);
+      ctx.bezierCurveTo(80.2, 185.4, 77.0, 187.6, 73.3, 189.3);
+      ctx.bezierCurveTo(69.6, 191.0, 65.6, 191.8, 61.3, 191.8);
+      ctx.lineTo(13.8, 191.8);
+      ctx.lineTo(13.8, 176.7);
+      ctx.lineTo(24.4, 176.7);
+      ctx.lineTo(24.4, 104.3);
+      ctx.lineTo(13.6, 104.3);
+      ctx.lineTo(13.6, 89.0);
+      ctx.bezierCurveTo(21.3, 89.1, 28.7, 89.1, 35.7, 89.1);
+      ctx.bezierCurveTo(42.7, 89.1, 49.6, 89.2, 56.5, 89.2);
+      ctx.bezierCurveTo(60.8, 89.2, 64.9, 89.7, 68.8, 90.9);
+      ctx.bezierCurveTo(72.6, 92.0, 76.0, 93.8, 78.9, 96.2);
+      ctx.bezierCurveTo(81.9, 98.5, 84.2, 101.5, 85.9, 105.1);
+      ctx.bezierCurveTo(87.6, 108.7, 88.5, 112.9, 88.5, 117.8);
+      ctx.bezierCurveTo(88.5, 122.0, 87.5, 126.0, 85.7, 129.6);
+      ctx.bezierCurveTo(83.9, 133.3, 81.4, 136.4, 78.2, 138.9);
+      ctx.closePath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(61.4, 147.9);
+      ctx.lineTo(40.7, 147.9);
+      ctx.lineTo(40.7, 176.7);
+      ctx.lineTo(61.4, 176.7);
+      ctx.bezierCurveTo(63.2, 176.7, 64.9, 176.2, 66.5, 175.3);
+      ctx.bezierCurveTo(68.0, 174.3, 69.4, 173.1, 70.5, 171.6);
+      ctx.bezierCurveTo(71.6, 170.0, 72.5, 168.3, 73.2, 166.5);
+      ctx.bezierCurveTo(73.8, 164.6, 74.1, 162.7, 74.1, 160.8);
+      ctx.bezierCurveTo(74.1, 159.1, 73.8, 157.5, 73.1, 156.0);
+      ctx.bezierCurveTo(72.4, 154.4, 71.4, 153.0, 70.3, 151.8);
+      ctx.bezierCurveTo(69.1, 150.6, 67.8, 149.7, 66.3, 149.0);
+      ctx.bezierCurveTo(64.7, 148.3, 63.1, 147.9, 61.4, 147.9);
+      ctx.closePath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(54.9, 104.3);
+      ctx.lineTo(40.9, 104.3);
+      ctx.lineTo(40.9, 131.5);
+      ctx.lineTo(56.5, 131.5);
+      ctx.bezierCurveTo(58.7, 131.5, 60.7, 131.2, 62.6, 130.6);
+      ctx.bezierCurveTo(64.4, 130.0, 65.9, 129.1, 67.2, 128.0);
+      ctx.bezierCurveTo(68.5, 126.8, 69.5, 125.4, 70.2, 123.7);
+      ctx.bezierCurveTo(71.0, 122.0, 71.3, 120.1, 71.3, 117.8);
+      ctx.bezierCurveTo(71.3, 115.3, 70.9, 113.2, 70.1, 111.5);
+      ctx.bezierCurveTo(69.4, 109.8, 68.2, 108.4, 66.8, 107.3);
+      ctx.bezierCurveTo(65.4, 106.3, 63.7, 105.5, 61.7, 105.0);
+      ctx.bezierCurveTo(59.7, 104.6, 57.4, 104.3, 54.9, 104.3);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(153, 220, 230)";
+      ctx.fill();
+
+      // bigData/Group/Compound Path
+      ctx.beginPath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(144.4, 104.3);
+      ctx.lineTo(144.4, 176.7);
+      ctx.lineTo(153.7, 176.7);
+      ctx.lineTo(153.7, 191.8);
+      ctx.lineTo(120.4, 191.8);
+      ctx.lineTo(120.4, 176.7);
+      ctx.lineTo(128.9, 176.7);
+      ctx.lineTo(128.9, 104.3);
+      ctx.lineTo(120.5, 104.3);
+      ctx.lineTo(120.5, 89.2);
+      ctx.lineTo(153.9, 89.2);
+      ctx.lineTo(153.9, 104.3);
+      ctx.lineTo(144.4, 104.3);
+      ctx.closePath();
+      ctx.fill();
+
+      // bigData/Group/Compound Path
+      ctx.beginPath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(262.5, 192.2);
+      ctx.lineTo(262.5, 181.7);
+      ctx.bezierCurveTo(258.3, 185.6, 253.6, 188.5, 248.4, 190.5);
+      ctx.bezierCurveTo(243.2, 192.5, 237.3, 193.5, 230.7, 193.5);
+      ctx.bezierCurveTo(225.9, 193.5, 221.3, 192.8, 217.0, 191.5);
+      ctx.bezierCurveTo(212.7, 190.2, 208.7, 188.4, 205.0, 186.1);
+      ctx.bezierCurveTo(201.3, 183.7, 198.0, 180.9, 195.1, 177.6);
+      ctx.bezierCurveTo(192.1, 174.4, 189.6, 170.8, 187.6, 166.8);
+      ctx.bezierCurveTo(185.5, 162.9, 184.0, 158.7, 182.9, 154.2);
+      ctx.bezierCurveTo(181.7, 149.7, 181.2, 145.1, 181.2, 140.3);
+      ctx.bezierCurveTo(181.2, 135.6, 181.7, 130.9, 182.9, 126.4);
+      ctx.bezierCurveTo(184.0, 121.9, 185.6, 117.7, 187.6, 113.8);
+      ctx.bezierCurveTo(189.7, 109.9, 192.2, 106.3, 195.2, 103.0);
+      ctx.bezierCurveTo(198.1, 99.8, 201.4, 97.0, 205.1, 94.6);
+      ctx.bezierCurveTo(208.8, 92.3, 212.7, 90.5, 217.1, 89.2);
+      ctx.bezierCurveTo(221.4, 87.9, 225.9, 87.3, 230.7, 87.3);
+      ctx.bezierCurveTo(234.8, 87.3, 238.8, 87.7, 242.4, 88.6);
+      ctx.bezierCurveTo(246.1, 89.5, 249.5, 90.7, 252.6, 92.2);
+      ctx.bezierCurveTo(255.7, 93.7, 258.5, 95.4, 261.0, 97.4);
+      ctx.bezierCurveTo(263.5, 99.3, 265.6, 101.4, 267.4, 103.6);
+      ctx.lineTo(275.2, 103.6);
+      ctx.lineTo(275.2, 119.1);
+      ctx.lineTo(257.8, 119.1);
+      ctx.bezierCurveTo(254.8, 113.9, 251.2, 110.0, 246.8, 107.3);
+      ctx.bezierCurveTo(242.5, 104.7, 237.1, 103.3, 230.7, 103.3);
+      ctx.bezierCurveTo(226.0, 103.3, 221.7, 104.3, 217.7, 106.3);
+      ctx.bezierCurveTo(213.8, 108.3, 210.3, 111.0, 207.4, 114.3);
+      ctx.bezierCurveTo(204.5, 117.7, 202.3, 121.6, 200.6, 126.1);
+      ctx.bezierCurveTo(199.0, 130.6, 198.2, 135.3, 198.2, 140.3);
+      ctx.bezierCurveTo(198.2, 145.4, 199.0, 150.1, 200.7, 154.6);
+      ctx.bezierCurveTo(202.3, 159.0, 204.6, 163.0, 207.5, 166.3);
+      ctx.bezierCurveTo(210.4, 169.7, 213.8, 172.3, 217.8, 174.3);
+      ctx.bezierCurveTo(221.7, 176.3, 226.0, 177.3, 230.7, 177.3);
+      ctx.bezierCurveTo(234.2, 177.3, 237.5, 176.8, 240.6, 175.8);
+      ctx.bezierCurveTo(243.8, 174.9, 246.7, 173.5, 249.3, 171.8);
+      ctx.bezierCurveTo(251.9, 170.1, 254.2, 168.0, 256.3, 165.6);
+      ctx.bezierCurveTo(258.3, 163.1, 259.9, 160.4, 261.1, 157.3);
+      ctx.lineTo(240.7, 157.3);
+      ctx.lineTo(240.7, 141.0);
+      ctx.lineTo(278.4, 141.0);
+      ctx.lineTo(278.4, 147.9);
+      ctx.lineTo(278.5, 192.2);
+      ctx.lineTo(262.5, 192.2);
+      ctx.closePath();
+      ctx.fill();
+
+      // bigData/Group/Compound Path
+      ctx.beginPath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(392.6, 191.8);
+      ctx.lineTo(353.4, 191.8);
+      ctx.lineTo(353.4, 176.7);
+      ctx.lineTo(363.4, 176.7);
+      ctx.lineTo(363.4, 104.3);
+      ctx.lineTo(353.4, 104.3);
+      ctx.lineTo(353.4, 89.2);
+      ctx.lineTo(392.6, 89.2);
+      ctx.bezierCurveTo(397.2, 89.2, 401.7, 89.8, 405.9, 91.0);
+      ctx.bezierCurveTo(410.2, 92.2, 414.2, 93.9, 417.8, 96.1);
+      ctx.bezierCurveTo(421.4, 98.3, 424.7, 101.0, 427.7, 104.1);
+      ctx.bezierCurveTo(430.6, 107.2, 433.1, 110.6, 435.2, 114.4);
+      ctx.bezierCurveTo(437.3, 118.2, 438.9, 122.3, 440.0, 126.6);
+      ctx.bezierCurveTo(441.2, 131.0, 441.7, 135.5, 441.7, 140.2);
+      ctx.bezierCurveTo(441.7, 148.0, 440.5, 155.0, 438.0, 161.4);
+      ctx.bezierCurveTo(435.5, 167.7, 432.0, 173.1, 427.6, 177.7);
+      ctx.bezierCurveTo(423.2, 182.2, 418.0, 185.7, 412.0, 188.1);
+      ctx.bezierCurveTo(406.1, 190.6, 399.6, 191.8, 392.6, 191.8);
+      ctx.closePath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(393.4, 104.3);
+      ctx.lineTo(380.1, 104.3);
+      ctx.lineTo(380.1, 176.7);
+      ctx.lineTo(393.4, 176.7);
+      ctx.bezierCurveTo(397.6, 176.7, 401.6, 175.9, 405.4, 174.3);
+      ctx.bezierCurveTo(409.1, 172.6, 412.4, 170.3, 415.2, 167.2);
+      ctx.bezierCurveTo(418.0, 164.0, 420.2, 160.2, 421.9, 155.7);
+      ctx.bezierCurveTo(423.5, 151.1, 424.3, 146.0, 424.3, 140.2);
+      ctx.bezierCurveTo(424.3, 135.1, 423.5, 130.4, 421.9, 126.0);
+      ctx.bezierCurveTo(420.2, 121.6, 418.0, 117.8, 415.2, 114.6);
+      ctx.bezierCurveTo(412.4, 111.4, 409.1, 108.8, 405.3, 107.0);
+      ctx.bezierCurveTo(401.6, 105.2, 397.6, 104.3, 393.4, 104.3);
+      ctx.closePath();
+      ctx.fill();
+
+      // bigData/Group/Compound Path
+      ctx.beginPath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(528.2, 191.8);
+      ctx.lineTo(528.2, 176.7);
+      ctx.lineTo(535.6, 176.7);
+      ctx.lineTo(529.2, 158.2);
+      ctx.lineTo(494.0, 158.2);
+      ctx.lineTo(487.7, 176.7);
+      ctx.lineTo(497.1, 176.7);
+      ctx.lineTo(497.1, 191.8);
+      ctx.lineTo(461.1, 191.8);
+      ctx.lineTo(461.1, 176.7);
+      ctx.lineTo(470.2, 176.7);
+      ctx.lineTo(501.1, 89.2);
+      ctx.lineTo(523.0, 89.2);
+      ctx.lineTo(553.7, 176.7);
+      ctx.lineTo(564.2, 176.7);
+      ctx.lineTo(564.2, 191.8);
+      ctx.lineTo(528.2, 191.8);
+      ctx.closePath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(511.4, 106.1);
+      ctx.lineTo(499.0, 143.5);
+      ctx.lineTo(524.0, 143.5);
+      ctx.lineTo(511.4, 106.1);
+      ctx.closePath();
+      ctx.fill();
+
+      // bigData/Group/Compound Path
+      ctx.beginPath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(655.9, 119.1);
+      ctx.lineTo(655.9, 103.7);
+      ctx.lineTo(633.9, 103.7);
+      ctx.lineTo(633.9, 176.7);
+      ctx.lineTo(644.0, 176.7);
+      ctx.lineTo(644.0, 191.8);
+      ctx.lineTo(608.2, 191.8);
+      ctx.lineTo(608.2, 176.7);
+      ctx.lineTo(617.3, 176.7);
+      ctx.lineTo(617.3, 103.7);
+      ctx.lineTo(598.7, 103.7);
+      ctx.lineTo(598.7, 119.1);
+      ctx.lineTo(581.5, 119.1);
+      ctx.lineTo(581.5, 89.2);
+      ctx.lineTo(673.1, 89.2);
+      ctx.lineTo(673.1, 119.1);
+      ctx.lineTo(655.9, 119.1);
+      ctx.closePath();
+      ctx.fill();
+
+      // bigData/Group/Compound Path
+      ctx.beginPath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(757.5, 191.8);
+      ctx.lineTo(757.5, 176.7);
+      ctx.lineTo(764.9, 176.7);
+      ctx.lineTo(758.4, 158.2);
+      ctx.lineTo(723.2, 158.2);
+      ctx.lineTo(716.9, 176.7);
+      ctx.lineTo(726.3, 176.7);
+      ctx.lineTo(726.3, 191.8);
+      ctx.lineTo(690.4, 191.8);
+      ctx.lineTo(690.4, 176.7);
+      ctx.lineTo(699.5, 176.7);
+      ctx.lineTo(730.3, 89.2);
+      ctx.lineTo(752.3, 89.2);
+      ctx.lineTo(782.9, 176.7);
+      ctx.lineTo(793.4, 176.7);
+      ctx.lineTo(793.4, 191.8);
+      ctx.lineTo(757.5, 191.8);
+      ctx.closePath();
+
+      // bigData/Group/Compound Path/Path
+      ctx.moveTo(740.6, 106.1);
+      ctx.lineTo(728.2, 143.5);
+      ctx.lineTo(753.3, 143.5);
+      ctx.lineTo(740.6, 106.1);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+      ctx.restore();
+    }
+
+    function impact(ctx) {
+
+      // impact/Group
+      ctx.save();
+
+      // impact/Group/Compound Path
+      ctx.save();
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(-248.1, -8.0);
+      ctx.lineTo(-248.1, -13.8);
+      ctx.lineTo(-256.4, -13.8);
+      ctx.lineTo(-256.4, 13.6);
+      ctx.lineTo(-252.6, 13.6);
+      ctx.lineTo(-252.6, 19.2);
+      ctx.lineTo(-266.0, 19.2);
+      ctx.lineTo(-266.0, 13.6);
+      ctx.lineTo(-262.6, 13.6);
+      ctx.lineTo(-262.6, -13.8);
+      ctx.lineTo(-269.6, -13.8);
+      ctx.lineTo(-269.6, -8.0);
+      ctx.lineTo(-276.0, -8.0);
+      ctx.lineTo(-276.0, -19.3);
+      ctx.lineTo(-241.7, -19.3);
+      ctx.lineTo(-241.7, -8.0);
+      ctx.lineTo(-248.1, -8.0);
+      ctx.closePath();
+      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(-200.6, 19.2);
+      ctx.lineTo(-200.6, 13.6);
+      ctx.lineTo(-196.8, 13.6);
+      ctx.lineTo(-196.8, 1.7);
+      ctx.lineTo(-216.8, 1.7);
+      ctx.lineTo(-216.8, 13.6);
+      ctx.lineTo(-213.1, 13.6);
+      ctx.lineTo(-213.1, 19.2);
+      ctx.lineTo(-226.6, 19.2);
+      ctx.lineTo(-226.6, 13.6);
+      ctx.lineTo(-223.1, 13.6);
+      ctx.lineTo(-223.1, -13.6);
+      ctx.lineTo(-226.6, -13.6);
+      ctx.lineTo(-226.6, -19.3);
+      ctx.lineTo(-213.1, -19.3);
+      ctx.lineTo(-213.1, -13.6);
+      ctx.lineTo(-216.8, -13.6);
+      ctx.lineTo(-216.8, -3.8);
+      ctx.lineTo(-196.8, -3.8);
+      ctx.lineTo(-196.8, -13.6);
+      ctx.lineTo(-200.6, -13.6);
+      ctx.lineTo(-200.6, -19.3);
+      ctx.lineTo(-187.1, -19.3);
+      ctx.lineTo(-187.1, -13.6);
+      ctx.lineTo(-190.6, -13.6);
+      ctx.lineTo(-190.6, 13.6);
+      ctx.lineTo(-187.1, 13.6);
+      ctx.lineTo(-187.1, 19.2);
+      ctx.lineTo(-200.6, 19.2);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(-169.4, 19.2);
+      ctx.lineTo(-169.4, 13.6);
+      ctx.lineTo(-166.0, 13.6);
+      ctx.lineTo(-166.0, -13.6);
+      ctx.lineTo(-169.4, -13.6);
+      ctx.lineTo(-169.4, -19.3);
+      ctx.lineTo(-141.9, -19.3);
+      ctx.lineTo(-141.9, -7.3);
+      ctx.lineTo(-148.2, -7.3);
+      ctx.lineTo(-148.2, -13.6);
+      ctx.lineTo(-159.8, -13.6);
+      ctx.lineTo(-159.8, -3.2);
+      ctx.lineTo(-148.9, -3.2);
+      ctx.lineTo(-148.9, 2.5);
+      ctx.lineTo(-159.8, 2.5);
+      ctx.lineTo(-159.8, 13.6);
+      ctx.lineTo(-148.2, 13.6);
+      ctx.lineTo(-148.2, 7.3);
+      ctx.lineTo(-141.9, 7.3);
+      ctx.lineTo(-141.9, 19.2);
+      ctx.lineTo(-169.4, 19.2);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(-97.6, -13.6);
+      ctx.lineTo(-97.6, 13.6);
+      ctx.lineTo(-94.1, 13.6);
+      ctx.lineTo(-94.1, 19.2);
+      ctx.lineTo(-106.6, 19.2);
+      ctx.lineTo(-106.6, 13.6);
+      ctx.lineTo(-103.4, 13.6);
+      ctx.lineTo(-103.4, -13.6);
+      ctx.lineTo(-106.5, -13.6);
+      ctx.lineTo(-106.5, -19.3);
+      ctx.lineTo(-94.0, -19.3);
+      ctx.lineTo(-94.0, -13.6);
+      ctx.lineTo(-97.6, -13.6);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(-31.3, -13.1);
+      ctx.lineTo(-31.3, 13.6);
+      ctx.lineTo(-27.5, 13.6);
+      ctx.lineTo(-27.5, 19.2);
+      ctx.lineTo(-41.1, 19.2);
+      ctx.lineTo(-41.1, 13.6);
+      ctx.lineTo(-37.3, 13.6);
+      ctx.lineTo(-37.3, -10.3);
+      ctx.lineTo(-49.2, 19.2);
+      ctx.lineTo(-54.3, 19.2);
+      ctx.lineTo(-66.3, -10.3);
+      ctx.lineTo(-66.3, 13.6);
+      ctx.lineTo(-62.5, 13.6);
+      ctx.lineTo(-62.5, 19.2);
+      ctx.lineTo(-76.1, 19.2);
+      ctx.lineTo(-76.1, 13.6);
+      ctx.lineTo(-72.5, 13.6);
+      ctx.lineTo(-72.5, -13.1);
+      ctx.lineTo(-76.4, -13.1);
+      ctx.lineTo(-76.4, -19.3);
+      ctx.lineTo(-63.0, -19.3);
+      ctx.lineTo(-51.7, 11.3);
+      ctx.lineTo(-40.2, -19.3);
+      ctx.lineTo(-27.4, -19.3);
+      ctx.lineTo(-27.4, -13.1);
+      ctx.lineTo(-31.3, -13.1);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(5.2, 2.1);
+      ctx.lineTo(-0.5, 2.1);
+      ctx.lineTo(-0.5, 13.6);
+      ctx.lineTo(4.3, 13.6);
+      ctx.lineTo(4.3, 19.2);
+      ctx.lineTo(-10.7, 19.2);
+      ctx.lineTo(-10.7, 13.6);
+      ctx.lineTo(-6.7, 13.6);
+      ctx.lineTo(-6.7, -13.6);
+      ctx.lineTo(-10.8, -13.6);
+      ctx.lineTo(-10.8, -19.3);
+      ctx.lineTo(5.3, -19.3);
+      ctx.bezierCurveTo(7.0, -19.3, 8.6, -19.0, 10.0, -18.6);
+      ctx.bezierCurveTo(11.5, -18.1, 12.8, -17.4, 13.8, -16.5);
+      ctx.bezierCurveTo(14.9, -15.6, 15.8, -14.5, 16.4, -13.2);
+      ctx.bezierCurveTo(17.0, -11.8, 17.3, -10.3, 17.3, -8.5);
+      ctx.bezierCurveTo(17.3, -7.0, 17.0, -5.7, 16.4, -4.4);
+      ctx.bezierCurveTo(15.8, -3.1, 15.0, -2.0, 13.9, -1.0);
+      ctx.bezierCurveTo(12.9, -0.0, 11.6, 0.7, 10.1, 1.3);
+      ctx.bezierCurveTo(8.6, 1.8, 7.0, 2.1, 5.2, 2.1);
+      ctx.closePath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(4.7, -13.6);
+      ctx.lineTo(-0.5, -13.6);
+      ctx.lineTo(-0.5, -3.4);
+      ctx.lineTo(5.3, -3.4);
+      ctx.bezierCurveTo(7.0, -3.4, 8.3, -3.8, 9.3, -4.7);
+      ctx.bezierCurveTo(10.4, -5.5, 10.9, -6.8, 10.9, -8.5);
+      ctx.bezierCurveTo(10.9, -9.3, 10.7, -10.0, 10.5, -10.6);
+      ctx.bezierCurveTo(10.3, -11.3, 10.0, -11.8, 9.5, -12.2);
+      ctx.bezierCurveTo(9.0, -12.7, 8.4, -13.0, 7.6, -13.2);
+      ctx.bezierCurveTo(6.8, -13.5, 5.8, -13.6, 4.7, -13.6);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(54.3, 19.2);
+      ctx.lineTo(54.3, 13.6);
+      ctx.lineTo(57.1, 13.6);
+      ctx.lineTo(54.7, 6.6);
+      ctx.lineTo(41.5, 6.6);
+      ctx.lineTo(39.1, 13.6);
+      ctx.lineTo(42.7, 13.6);
+      ctx.lineTo(42.7, 19.2);
+      ctx.lineTo(29.2, 19.2);
+      ctx.lineTo(29.2, 13.6);
+      ctx.lineTo(32.6, 13.6);
+      ctx.lineTo(44.2, -19.3);
+      ctx.lineTo(52.4, -19.3);
+      ctx.lineTo(63.9, 13.6);
+      ctx.lineTo(67.8, 13.6);
+      ctx.lineTo(67.8, 19.2);
+      ctx.lineTo(54.3, 19.2);
+      ctx.closePath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(48.0, -12.9);
+      ctx.lineTo(43.4, 1.1);
+      ctx.lineTo(52.8, 1.1);
+      ctx.lineTo(48.0, -12.9);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(98.2, 19.9);
+      ctx.bezierCurveTo(96.4, 19.9, 94.7, 19.6, 93.1, 19.1);
+      ctx.bezierCurveTo(91.4, 18.6, 90.0, 18.0, 88.6, 17.1);
+      ctx.bezierCurveTo(87.2, 16.2, 86.0, 15.1, 84.9, 13.9);
+      ctx.bezierCurveTo(83.8, 12.7, 82.8, 11.3, 82.0, 9.9);
+      ctx.bezierCurveTo(81.3, 8.4, 80.7, 6.8, 80.3, 5.1);
+      ctx.bezierCurveTo(79.9, 3.4, 79.6, 1.7, 79.6, -0.1);
+      ctx.bezierCurveTo(79.6, -1.9, 79.9, -3.6, 80.3, -5.3);
+      ctx.bezierCurveTo(80.7, -7.0, 81.3, -8.5, 82.1, -10.0);
+      ctx.bezierCurveTo(82.8, -11.5, 83.8, -12.8, 84.9, -14.1);
+      ctx.bezierCurveTo(86.0, -15.3, 87.2, -16.3, 88.6, -17.2);
+      ctx.bezierCurveTo(90.0, -18.1, 91.5, -18.8, 93.1, -19.2);
+      ctx.bezierCurveTo(94.7, -19.7, 96.4, -20.0, 98.2, -20.0);
+      ctx.bezierCurveTo(99.7, -20.0, 101.2, -19.8, 102.6, -19.5);
+      ctx.bezierCurveTo(104.0, -19.1, 105.2, -18.7, 106.4, -18.1);
+      ctx.bezierCurveTo(107.6, -17.6, 108.6, -16.9, 109.6, -16.2);
+      ctx.bezierCurveTo(110.5, -15.4, 111.3, -14.7, 111.9, -13.9);
+      ctx.lineTo(114.8, -13.9);
+      ctx.lineTo(114.8, -8.0);
+      ctx.lineTo(108.3, -8.0);
+      ctx.bezierCurveTo(107.2, -10.0, 105.9, -11.4, 104.2, -12.4);
+      ctx.bezierCurveTo(102.6, -13.4, 100.6, -14.0, 98.2, -14.0);
+      ctx.bezierCurveTo(96.4, -14.0, 94.8, -13.6, 93.3, -12.8);
+      ctx.bezierCurveTo(91.8, -12.1, 90.6, -11.1, 89.5, -9.8);
+      ctx.bezierCurveTo(88.4, -8.6, 87.5, -7.1, 86.9, -5.4);
+      ctx.bezierCurveTo(86.3, -3.7, 86.0, -1.9, 86.0, -0.1);
+      ctx.bezierCurveTo(86.0, 1.8, 86.3, 3.6, 86.9, 5.3);
+      ctx.bezierCurveTo(87.6, 6.9, 88.4, 8.4, 89.5, 9.7);
+      ctx.bezierCurveTo(90.6, 10.9, 91.9, 11.9, 93.4, 12.7);
+      ctx.bezierCurveTo(94.8, 13.4, 96.5, 13.8, 98.2, 13.8);
+      ctx.bezierCurveTo(100.5, 13.8, 102.5, 13.3, 104.1, 12.3);
+      ctx.bezierCurveTo(105.7, 11.3, 107.2, 9.8, 108.4, 7.7);
+      ctx.lineTo(115.4, 7.7);
+      ctx.bezierCurveTo(114.5, 9.6, 113.5, 11.3, 112.3, 12.8);
+      ctx.bezierCurveTo(111.2, 14.3, 109.9, 15.6, 108.4, 16.7);
+      ctx.bezierCurveTo(107.0, 17.7, 105.4, 18.5, 103.7, 19.0);
+      ctx.bezierCurveTo(102.0, 19.6, 100.2, 19.9, 98.2, 19.9);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(156.0, -8.0);
+      ctx.lineTo(156.0, -13.8);
+      ctx.lineTo(147.7, -13.8);
+      ctx.lineTo(147.7, 13.6);
+      ctx.lineTo(151.5, 13.6);
+      ctx.lineTo(151.5, 19.2);
+      ctx.lineTo(138.1, 19.2);
+      ctx.lineTo(138.1, 13.6);
+      ctx.lineTo(141.5, 13.6);
+      ctx.lineTo(141.5, -13.8);
+      ctx.lineTo(134.5, -13.8);
+      ctx.lineTo(134.5, -8.0);
+      ctx.lineTo(128.1, -8.0);
+      ctx.lineTo(128.1, -19.3);
+      ctx.lineTo(162.4, -19.3);
+      ctx.lineTo(162.4, -8.0);
+      ctx.lineTo(156.0, -8.0);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(214.0, 20.0);
+      ctx.bezierCurveTo(212.2, 20.0, 210.5, 19.8, 208.8, 19.3);
+      ctx.bezierCurveTo(207.2, 18.8, 205.7, 18.1, 204.3, 17.3);
+      ctx.bezierCurveTo(202.9, 16.4, 201.7, 15.3, 200.6, 14.1);
+      ctx.bezierCurveTo(199.5, 12.9, 198.5, 11.6, 197.7, 10.1);
+      ctx.bezierCurveTo(196.9, 8.6, 196.3, 7.0, 195.9, 5.3);
+      ctx.bezierCurveTo(195.5, 3.6, 195.3, 1.8, 195.3, -0.0);
+      ctx.bezierCurveTo(195.3, -1.9, 195.5, -3.6, 195.9, -5.3);
+      ctx.bezierCurveTo(196.4, -7.1, 197.0, -8.6, 197.7, -10.1);
+      ctx.bezierCurveTo(198.5, -11.6, 199.5, -13.0, 200.6, -14.2);
+      ctx.bezierCurveTo(201.7, -15.4, 203.0, -16.4, 204.3, -17.3);
+      ctx.bezierCurveTo(205.7, -18.2, 207.2, -18.8, 208.9, -19.3);
+      ctx.bezierCurveTo(210.5, -19.8, 212.2, -20.0, 214.0, -20.0);
+      ctx.bezierCurveTo(216.8, -20.0, 219.3, -19.5, 221.6, -18.4);
+      ctx.bezierCurveTo(223.8, -17.4, 225.8, -16.0, 227.5, -14.2);
+      ctx.bezierCurveTo(229.1, -12.3, 230.4, -10.2, 231.3, -7.8);
+      ctx.bezierCurveTo(232.3, -5.4, 232.7, -2.8, 232.7, -0.0);
+      ctx.bezierCurveTo(232.7, 1.8, 232.5, 3.6, 232.1, 5.3);
+      ctx.bezierCurveTo(231.7, 7.0, 231.1, 8.6, 230.3, 10.1);
+      ctx.bezierCurveTo(229.5, 11.6, 228.6, 12.9, 227.4, 14.1);
+      ctx.bezierCurveTo(226.3, 15.3, 225.1, 16.4, 223.7, 17.3);
+      ctx.bezierCurveTo(222.3, 18.1, 220.8, 18.8, 219.2, 19.3);
+      ctx.bezierCurveTo(217.5, 19.8, 215.8, 20.0, 214.0, 20.0);
+      ctx.closePath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(214.0, -14.0);
+      ctx.bezierCurveTo(212.2, -14.0, 210.5, -13.6, 209.1, -12.9);
+      ctx.bezierCurveTo(207.6, -12.1, 206.3, -11.1, 205.2, -9.9);
+      ctx.bezierCurveTo(204.1, -8.6, 203.3, -7.1, 202.7, -5.4);
+      ctx.bezierCurveTo(202.1, -3.7, 201.8, -1.9, 201.8, -0.0);
+      ctx.bezierCurveTo(201.8, 1.9, 202.1, 3.7, 202.7, 5.4);
+      ctx.bezierCurveTo(203.3, 7.1, 204.1, 8.5, 205.2, 9.8);
+      ctx.bezierCurveTo(206.3, 11.1, 207.6, 12.1, 209.1, 12.8);
+      ctx.bezierCurveTo(210.5, 13.6, 212.2, 13.9, 214.0, 13.9);
+      ctx.bezierCurveTo(215.8, 13.9, 217.5, 13.6, 219.0, 12.8);
+      ctx.bezierCurveTo(220.5, 12.1, 221.7, 11.1, 222.8, 9.8);
+      ctx.bezierCurveTo(223.9, 8.5, 224.7, 7.1, 225.3, 5.4);
+      ctx.bezierCurveTo(225.9, 3.7, 226.2, 1.9, 226.2, -0.0);
+      ctx.bezierCurveTo(226.2, -1.9, 225.9, -3.7, 225.3, -5.4);
+      ctx.bezierCurveTo(224.7, -7.1, 223.9, -8.5, 222.8, -9.8);
+      ctx.bezierCurveTo(221.7, -11.1, 220.4, -12.1, 218.9, -12.9);
+      ctx.bezierCurveTo(217.5, -13.6, 215.8, -14.0, 214.0, -14.0);
+      ctx.closePath();
+      ctx.fill();
+
+      // impact/Group/Compound Path
+      ctx.beginPath();
+
+      // impact/Group/Compound Path/Path
+      ctx.moveTo(269.6, -7.3);
+      ctx.lineTo(269.6, -13.6);
+      ctx.lineTo(257.9, -13.6);
+      ctx.lineTo(257.9, -3.1);
+      ctx.lineTo(270.6, -3.1);
+      ctx.lineTo(270.6, 2.4);
+      ctx.lineTo(257.9, 2.4);
+      ctx.lineTo(257.9, 13.6);
+      ctx.lineTo(261.6, 13.6);
+      ctx.lineTo(261.6, 19.2);
+      ctx.lineTo(248.3, 19.2);
+      ctx.lineTo(248.3, 13.6);
+      ctx.lineTo(251.7, 13.6);
+      ctx.lineTo(251.7, -13.6);
+      ctx.lineTo(248.4, -13.6);
+      ctx.lineTo(248.4, -19.3);
+      ctx.lineTo(276.0, -19.3);
+      ctx.lineTo(276.0, -7.3);
+      ctx.lineTo(269.6, -7.3);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+      ctx.restore();
+    }
+  </script>
+    </head>
+    
+    <body onload="init()">
+        <div class="container-fluid">
+            <div class="main">
+                <div class="page row" id="banner">
+                    <div class="col-sm-8"><canvas id="canvas" class='img-responsive' width="801" height="201"></canvas></div><!-- canvas -->
+                        <div class="col-sm-4">
+                              <img src="images/DM-logo-color.png" alt="DM logo" class="img-responsive">
+                        </div>
+                        <div class="col-sm-12"><hr></div>
+                        <div class="col-sm-6">
+                              <h2>Just fill out the form and you will get a FREE Infographic explaining how your organization can access Business Intelligence to achieve superior analytics, strategy, and a competitive edge!</h2>
+                        </div>
+                    <div class="col-sm-6"><div class="AW-Form-962318429"></div>
+                            <script type="text/javascript">(function(d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s); js.id = id;
+                                js.src = "//forms.aweber.com/form/29/962318429.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                                }(document, "script", "aweber-wjs-296rh33di"));
+                            </script>
+                    </div><!-- form -->
+                </div>
+            </div>
+
+                <footer>
+
+                                <p><a href="https://www.linkedin.com/in/davemanning" target="_blank">Linkedin</a>|
+                                <a href="https://www.behance.net/dave_manning" target="_blank">Behance</a>|
+                                <a href="http://www.slideshare.net/DaveManning1" target="_blank">Slideshare</a>|
+                                <a href="https://github.com/DaveManning" target="_blank">Github</a>|
+                                <a href="https://twitter.com/dk_manning" target="_blank">Twitter</a>|
+                                <a href="http://scopicdrive.com/" target="_blank">Blog</a></p>
+
+                                <span class='st_sharethis_large' displayText='ShareThis'></span>
+                                <span class='st_facebook_large' displayText='Facebook'></span>
+                                <span class='st_twitter_large' displayText='Tweet'></span>
+                                <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                                <span class='st_email_large' displayText='Email'></span>
+
+                    <p>content and design &#169 2015 Dave Manning</p>
+
+                </footer>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
